@@ -1,0 +1,15 @@
+import java.util.*;
+import java.io.*;
+public class Main {
+	public static void main (String[]args) {
+		int[] a= {2,5,3,4,7};
+		       
+	        System.out.println("Reversed array:");
+		 
+	        for (int i = 4; i >= 0; i--) {
+	            System.out.println(a[i] + " ");
+	        }
+		
+	}
+
+}
