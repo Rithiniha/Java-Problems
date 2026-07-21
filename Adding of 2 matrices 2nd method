@@ -1,0 +1,78 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter number of rows");
+        int row = sc.nextInt();
+
+        System.out.println("Enter number of columns");
+        int column = sc.nextInt();
+
+        int arr[][] = new int[row][column];
+
+        System.out.println("Enter elements of first array:");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("First Array:");
+        for (int[] k : arr) {
+            for (int q : k) {
+                System.out.print(q + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Enter number of rows");
+        int row2 = sc.nextInt();
+
+        System.out.println("Enter number of columns");
+        int column2 = sc.nextInt();
+
+        int arr2[][] = new int[row2][column2];
+
+        System.out.println("Enter elements of second array:");
+        for (int i = 0; i < row2; i++) {
+            for (int j = 0; j < column2; j++) {
+                arr2[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Second Array:");
+        for (int[] m : arr2) {
+            for (int n : m) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
+
+        if (row == row2 && column == column2) {
+
+            int sum[][] = new int[row][column];
+
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < column; j++) {
+                    sum[i][j] = arr[i][j] + arr2[i][j];
+                }
+            }
+
+            System.out.println("Sum of the arrays:");
+            for (int[] d : sum) {
+                for (int s : d) {
+                    System.out.print(s + " ");
+                }
+                System.out.println();
+            }
+
+        } else {
+            System.out.println("Addition not possible. Arrays must have the same dimensions.");
+        }
+
+        sc.close();
+    }
+}
