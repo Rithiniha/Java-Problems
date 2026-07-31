@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main {
+
+    public static void main(int[] arr, int t) {
+        int s = 0;
+        int winSum = 0;
+        int mLen = arr.length + 1;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            winSum += arr[i];
+
+            while (winSum >= t) {
+
+                mLen = Math.min(i - s + 1, mLen);
+
+                winSum -= arr[s++];
+            }
+        }
+        if (mLen == arr.length + 1)
+            System.out.println("No subarray found");
+        else
+            System.out.println("Minimum length = " + mLen);
+    }
+
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter array size: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter target sum: ");
+        int t = sc.nextInt();
+
+        main(arr, t);
+
+        sc.close();
+    }
+}
